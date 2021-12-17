@@ -14,3 +14,8 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.wordpress-content {
+  max-width: 1280px;
+  margin: 0 auto;
+}
