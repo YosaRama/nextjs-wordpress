@@ -1,18 +1,8 @@
-// async function fetcher(query, { variable } = {}) {
-//   const res = await fetch("http://wordpress-nextjs.dev.test/graphql", {
-//     method: "POST",
-//     headers: {
-//       "Content-Type": "application/json",
-//     },
-//     body: JSON.stringify({ query, variable }),
-//   });
+const SITE_URL = "http://localhost:10004/graphql."; //TODO : <-- Control by ENV
 
-//   const result = res.json();
-//   return result;
-// }
-
+//* Wordpress Data Fetcher
 async function fetcher(query, { variable } = {}) {
-  const res = await fetch("http://localhost:10004/graphql.", {
+  const res = await fetch(SITE_URL, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

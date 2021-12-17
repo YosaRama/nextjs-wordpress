@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 import fetcher from "../hook/fetcher";
-import { GET_ABOUT, GET_PAGE } from "../hook/wordpress/api";
+import { GET_ABOUT } from "../hook/wordpress/api";
 import Link from "next/link";
 
 function Homepage(props) {
@@ -22,12 +22,13 @@ function Homepage(props) {
 export default Homepage;
 
 export async function getStaticProps() {
+  // FETCHING DATA
   const response = await fetcher(GET_ABOUT);
   const content = response.data.page.content;
   const title = response.data.page.title;
 
   return {
     props: { content, title },
-    revalidate: 1,
+    revalidate: 1, // <--- Revalidation Time
   };
 }
